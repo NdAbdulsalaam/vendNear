@@ -6,6 +6,9 @@ from django.utils.translation import gettext_lazy as _  # Import the translation
 class Vendor(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     address = models.TextField(null=True)
+    
+    def __str__(self):
+        return self.user.username
    
 # Product Category 
 class ProductCategory(models.Model):
@@ -13,6 +16,9 @@ class ProductCategory(models.Model):
     title = models.CharField(_("Product category title"), max_length=200)
     detail = models.TextField(_("Product category details"), null=True)
     
+    class Meta:
+        verbose_name_plural = "Product Categories" 
+        
     def __str__(self):
         return self.title
     
