@@ -1,0 +1,23 @@
+# IDE/editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Environment variables (dotenv, etc.)
+.env
+.env.*
+*.env
+
+# Backup files
+*~
+*.bak
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
