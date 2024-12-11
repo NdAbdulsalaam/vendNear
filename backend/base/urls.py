@@ -13,4 +13,9 @@ urlpatterns = [
     # customer
     path('customers/', v.CustomerListView.as_view()),
     path('customer/<int:pk>/', v.CustomerDetailView.as_view()),
+    
+    # order
+    path('orders/', v.OrderListView.as_view()),
+    path('order/<int:pk>/', v.OrderDetailView.as_view()),
+    
 ]
