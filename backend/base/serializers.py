@@ -4,4 +4,9 @@ from . import models
 class VendorSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Vendor
-        fields = ['user', 'address']
+        fields = ['id', 'user', 'address']
+        
+class VendorDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Vendor
+        fields = ['id', 'user', 'address']
