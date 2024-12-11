@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,6 @@ SECRET_KEY = 'django-insecure-xqe_tdq*8m)f-u0%q!ly8ku=i+bzx@isz@2hriyq-63)or(&x9
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -141,6 +141,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
-    ]
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+# Optionally, you can configure token lifespan (access and refresh token expiration time)
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # Token expiry time (default is 5 minutes)
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  # Refresh token expiry time (default is 1 day)
+    'ROTATE_REFRESH_TOKENS': False,  # Whether to rotate refresh tokens or not
+    'BLACKLIST_AFTER_ROTATION': False,  # Whether to blacklist refresh tokens after rotation
 }
