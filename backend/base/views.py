@@ -1,11 +1,19 @@
 from rest_framework import generics, permissions
-from .serializers import VendorSerializer, VendorDetailSerializer
-from .models import Vendor
+from . import serializers as s
+from . import models as m
 
-class VendorList(generics.ListCreateAPIView):
-    queryset = Vendor.objects.all()
-    serializer_class = VendorSerializer
+class VendorListView(generics.ListCreateAPIView):
+    queryset = m.Vendor.objects.all()
+    serializer_class = s.VendorListSerializer
 
-class VendorDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Vendor.objects.all()
-    serializer_class = VendorDetailSerializer
+class VendorDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = m.Vendor.objects.all()
+    serializer_class = s.VendorDetailSerializer
+
+class ProductListView(generics.ListCreateAPIView):
+    queryset = m.Product.objects.all()
+    serializer_class = s.ProductListSerializer
+    
+class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = m.Product.objects.all()
+    serializer_class = s.ProductDetailSerializer

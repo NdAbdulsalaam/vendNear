@@ -13,8 +13,8 @@ class Vendor(models.Model):
 # Product Category 
 class ProductCategory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(_("Product category title"), max_length=200)
-    detail = models.TextField(_("Product category details"), null=True)
+    title = models.CharField(max_length=200)
+    detail = models.TextField(null=True)
     
     class Meta:
         verbose_name_plural = "Product Categories" 
@@ -25,11 +25,14 @@ class ProductCategory(models.Model):
     
 # Product
 class Product(models.Model):
-    title = models.CharField(_("Product title"), max_length=200)
-    detail = models.TextField(_("Product details"), null=True)
-    price = models.FloatField(_("Product price"))
+    category = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL, null=True)
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
+    title = models.CharField(max_length=200)
+    detail = models.TextField(null=True)
+    price = models.FloatField()
     
     def __str__(self):
         return self.title
+
     
     
