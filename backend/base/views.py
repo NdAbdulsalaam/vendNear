@@ -1,52 +1,34 @@
-from rest_framework import generics, permissions, pagination, viewsets
+from rest_framework import viewsets
 from . import serializers as s
 from . import models as m
 
 # Vendor Views
-class VendorListView(generics.ListCreateAPIView):
+class VendorView(viewsets.ModelViewSet):
     queryset = m.Vendor.objects.all()
-    serializer_class = s.VendorListSerializer
+    serializer_class = s.VendorSerializer
 
-class VendorDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = m.Vendor.objects.all()
-    serializer_class = s.VendorDetailSerializer
 
 # Product Views
-class ProductListView(generics.ListCreateAPIView):
+class ProductView(viewsets.ModelViewSet):
     queryset = m.Product.objects.all()
-    serializer_class = s.ProductListSerializer
+    serializer_class = s.ProductSerializer
     
-class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = m.Product.objects.all()
-    serializer_class = s.ProductDetailSerializer
-
 class ProductRatingView(viewsets.ModelViewSet):
     queryset = m.Product_Rating.objects.all()
     serializer_class = s.ProductRatingSerializer
 
+
 # Customer Views
-class CustomerListView(generics.ListCreateAPIView):
+class CustomerView(viewsets.ModelViewSet):
     queryset = m.Customer.objects.all()
-    serializer_class = s.CustomerListSerializer
-    
-class CustomerDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = m.Customer.objects.all()
-    serializer_class = s.CustomerDetailSerializer
+    serializer_class = s.CustomerSerializer
   
 class CustomerAddressView(viewsets.ModelViewSet):
     serializer_class = s.CustomerAddressSerializer
     queryset = m.Customer_Address.objects.all()
+   
     
 # Order Views
-class OrderListView(generics.ListCreateAPIView):
+class OrderView(viewsets.ModelViewSet):
     queryset = m.Order.objects.all()
-    serializer_class = s.OrderListSerializer
-    
-class OrderDetailView(generics.ListAPIView):
-    serializer_class = s.OrderDetailSerializer
-    
-    def get_queryset(self):
-        order_id = self.kwargs['pk']
-        order = m.Order.objects.get(id=order_id)
-        order_items = m.Order_Item.objects.filter(order=order)
-        return order_items
+    serializer_class = s.OrderSerializer

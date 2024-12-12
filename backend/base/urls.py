@@ -3,27 +3,12 @@ from . import views as v
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('address', v.CustomerAddressView)
+router.register('vendor', v.VendorView)
+router.register('product', v.ProductView)
+router.register('customer', v.CustomerView)
+router.register('order', v.OrderView)
+router.register('customer-address', v.CustomerAddressView)
 router.register('product-rating', v.ProductRatingView)
 
-urlpatterns = [
-    # vendor
-    path('vendors/', v.VendorListView.as_view()),
-    path('vendor/<int:pk>/', v.VendorDetailView.as_view()),
-    
-    # product
-    path('products/', v.ProductListView.as_view()),
-    path('product/<int:pk>/', v.ProductDetailView.as_view()),
-    
-    # customer
-    path('customers/', v.CustomerListView.as_view()),
-    path('customer/<int:pk>/', v.CustomerDetailView.as_view()),
-    
-    
-    # order
-    path('orders/', v.OrderListView.as_view()),
-    path('order/<int:pk>/', v.OrderDetailView.as_view()),
-    
-]
 
-urlpatterns += router.urls
+urlpatterns = router.urls
