@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, pagination, viewsets
 from . import serializers as s
 from . import models as m
 
@@ -28,6 +28,16 @@ class CustomerListView(generics.ListCreateAPIView):
 class CustomerDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = m.Customer.objects.all()
     serializer_class = s.CustomerDetailSerializer
+  
+class CustomerAddressView(viewsets.ModelViewSet):
+    serializer_class = s.CustomerAddressSerializer
+    queryset = m.Customer_Address.objects.all()
+    
+    # def get_queryset(self):
+    #     customer_id = self.kwargs['pk']
+    #     customer = m.Customer.objects.get(id=customer_id)
+    #     customer_addresses = m.Customer_Address.objects.filter(customer=customer)
+    #     return customer_addresses
     
 # Order Views
 class OrderListView(generics.ListCreateAPIView):
