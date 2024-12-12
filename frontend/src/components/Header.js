@@ -7,7 +7,7 @@ const Header = () => {
     <header className="bg-black text-white py-2 px-6 flex items-center justify-between">
       {/* Logo */}
       <div className="text-2xl font-bold tracking-wide">
-        vendNear
+      <a href="http://localhost:3000/" className="hover:text-blue-400">vendNear</a>
       </div>
 
       {/* Navigation Menu */}
