@@ -20,6 +20,10 @@ class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = m.Product.objects.all()
     serializer_class = s.ProductDetailSerializer
 
+class ProductRatingView(viewsets.ModelViewSet):
+    queryset = m.Product_Rating.objects.all()
+    serializer_class = s.ProductRatingSerializer
+
 # Customer Views
 class CustomerListView(generics.ListCreateAPIView):
     queryset = m.Customer.objects.all()
@@ -32,12 +36,6 @@ class CustomerDetailView(generics.RetrieveUpdateDestroyAPIView):
 class CustomerAddressView(viewsets.ModelViewSet):
     serializer_class = s.CustomerAddressSerializer
     queryset = m.Customer_Address.objects.all()
-    
-    # def get_queryset(self):
-    #     customer_id = self.kwargs['pk']
-    #     customer = m.Customer.objects.get(id=customer_id)
-    #     customer_addresses = m.Customer_Address.objects.filter(customer=customer)
-    #     return customer_addresses
     
 # Order Views
 class OrderListView(generics.ListCreateAPIView):

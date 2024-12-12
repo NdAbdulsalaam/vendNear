@@ -33,7 +33,6 @@ class Product(models.Model):
     
     def __str__(self):
         return self.title
-
     
 # Customer Models
 class Customer(models.Model):
@@ -53,6 +52,20 @@ class Customer_Address(models.Model):
     
     def __str__(self):
         return self.address
+    
+# Product Rating and Reviews
+class Product_Rating(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='customer_ratings')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_ratings')
+    rating = models.IntegerField()
+    reviews = models.TextField()
+    add_time = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        verbose_name_plural = "Product Ratings"
+    
+    def __str__(self):
+        return self.reviews
     
 # Order Models
 class Order(models.Model):

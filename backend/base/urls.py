@@ -4,6 +4,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('address', v.CustomerAddressView)
+router.register('product-rating', v.ProductRatingView)
 
 urlpatterns = [
     # vendor
