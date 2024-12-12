@@ -15,13 +15,14 @@ const App = () => {
         {/* Below Header */}
         <BelowHeader />
 
-        {/* Main Content */}
+        {/* Main Layout */}
         <div className="flex flex-1">
           {/* Sidebar */}
           <Sidebar />
 
-          {/* Routes */}
+          {/* Main Content */}
           <div className="flex-1 p-4">
+            {/* Routes */}
             <AppRoutes />
           </div>
         </div>
