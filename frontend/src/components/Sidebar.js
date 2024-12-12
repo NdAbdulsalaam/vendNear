@@ -10,6 +10,7 @@ const Sidebar = () => {
 
   // Categories
   const categories = [
+    { name: 'Home', icon: <FaTshirt />, path: '/home' },
     { name: 'Traditional Wear', icon: <FaTshirt />, path: '/traditional-wear' },
     { name: 'Footwear', icon: <FaShoePrints />, path: '/footwear' },
     { name: 'Accessories', icon: <FaGift />, path: '/accessories' },
