@@ -5,6 +5,7 @@ import Header from './components/Header';
 import BelowHeader from './components/BelowHeader';
 import Sidebar from './components/Sidebar';
 import AppRoutes from './routes/Routes';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -27,7 +28,12 @@ const App = () => {
             <AppRoutes />
           </div>
         </div>
-      </div>
+
+        {/* Footer Section */}
+        <div className="col-span-3 mt-6">
+          <Footer />
+        </div>
+        </div>
     </Router>
   );
 };
