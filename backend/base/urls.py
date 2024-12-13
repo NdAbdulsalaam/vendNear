@@ -9,6 +9,7 @@ router.register('customer', v.CustomerView)
 router.register('order', v.OrderView)
 router.register('customer-address', v.CustomerAddressView)
 router.register('product-rating', v.ProductRatingView)
+router.register('product-category', v.ProductCategoryView)
 
 
 urlpatterns = router.urls

@@ -16,6 +16,10 @@ class ProductView(viewsets.ModelViewSet):
 class ProductRatingView(viewsets.ModelViewSet):
     queryset = m.Product_Rating.objects.all()
     serializer_class = s.ProductRatingSerializer
+    
+class ProductCategoryView(viewsets.ModelViewSet):
+    queryset = m.Product_Category.objects.all()
+    serializer_class = s.ProductCategorySerializer
 
 
 # Customer Views
