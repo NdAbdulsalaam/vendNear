@@ -4,10 +4,10 @@ import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   return (
-    <header className="bg-black text-white py-2 px-6 flex items-center justify-between">
+    <header className="bg-black text-white py-2 px-6 flex items-center justify-between sticky top-0 z-50 shadow-md">
       {/* Logo */}
       <div className="text-2xl font-bold tracking-wide">
-      <a href="http://localhost:3000/" className="hover:text-blue-400">vendNear</a>
+        <a href="http://localhost:3000/" className="hover:text-blue-400">vendNear</a>
       </div>
 
       {/* Navigation Menu */}

@@ -31,9 +31,9 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed z-40 top-0 left-0 h-full bg-gray-100 w-64 p-4 transition-transform transform ${
+        className={`fixed top-0 left-0 w-64 h-full bg-gray-100 p-4 transition-transform transform ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:relative md:translate-x-0`}
+        } md:relative md:translate-x-0 md:h-full`}
       >
         <h2 className="text-lg font-bold mb-4">Categories</h2>
         <ul className="space-y-4">
