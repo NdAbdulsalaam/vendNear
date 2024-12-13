@@ -5,6 +5,8 @@ import RecentlyViewed from '../components/RecentlyViewed';
 import SuggestionsForYou from '../components/SuggestionsForYou';
 import DealsOfTheDay from '../components/DealsOfTheDay';
 import BestSellers from '../components/BestSellers';
+import TopBrands from '../components/TopBrands';
+import CustomerReviews from '../components/CustomerReviews';
 
 const Home = () => {
   return (
@@ -30,6 +32,17 @@ const Home = () => {
       <div className="col-span-3 mt-6">
         <BestSellers />
       </div>
+
+      {/* Top Brands Section */}
+      <div className="col-span-3 mt-6">
+        <TopBrands />
+      </div>
+
+      {/* Customer Reviews Section */}
+      <div className="col-span-3 mt-6">
+        <CustomerReviews />
+      </div>
+
     </div>
   );
 };
