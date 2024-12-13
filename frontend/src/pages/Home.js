@@ -1,9 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import PromotionalOffer from '../components/PromotionalOffer';
+import PromotionalOffer from '../components/PopularProducts';
 import RecentlyViewed from '../components/RecentlyViewed';
 import SuggestionsForYou from '../components/SuggestionsForYou';
 import DealsOfTheDay from '../components/DealsOfTheDay';
+import BestSellers from '../components/BestSellers';
 
 const Home = () => {
   return (
@@ -23,6 +24,11 @@ const Home = () => {
       {/* Deals of the Day Section */}
       <div className="col-span-3 mt-6">
         <DealsOfTheDay />
+      </div>
+
+      {/* Deals of the Day Section */}
+      <div className="col-span-3 mt-6">
+        <BestSellers />
       </div>
     </div>
   );
